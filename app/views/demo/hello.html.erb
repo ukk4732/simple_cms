@@ -1,0 +1,17 @@
+<h1>Demo Hello Page</h1>
+<p>Hello World</p>
+
+<% @my_array.each do |n| %>
+  <%= n %> <br />
+<% end %><br />
+
+<a href="/demo/index">Index Page 1</a><br />
+<%= link_to('Index Page 2', {action: 'index'}) %><br /> <br />
+
+ID: <%= @id %><br/>
+Name: <%= params["name"] %><br/>
+Page: <%= @page + 1 %><br/><br/>
+
+<hr>
+
+<%= params.inspect %>

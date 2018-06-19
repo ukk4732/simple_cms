@@ -1,0 +1,8 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: simple_cms_development
+  pool: 5
+  host: localhost
+  username: postgres
+  password: postgres
