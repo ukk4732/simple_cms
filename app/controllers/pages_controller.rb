@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   before_action :get_all_pages, only: [:index]
   before_action :find_page, only: [:show, :edit, :update, :delete, :destroy]
-  layout false
+  layout "admin"
 
   def index
   end

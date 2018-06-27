@@ -2,7 +2,7 @@ class SectionController < ApplicationController
   before_action :get_all_sections, only: [:index]
   before_action :find_section, only: [:show, :edit, :update, :delete, :destroy]
 
-  layout false
+  layout "admin"
 
   def index
   end

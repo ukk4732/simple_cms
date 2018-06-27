@@ -1,8 +1,4 @@
-<% if !flash[:notice].blank? %>
-  <div class="notice">
-    <%= flash[:notice] %>
-  </div>
-<% end %>
+<% @page_title = "Subjects" %>
 <div class="subjects index">
   <h2>Subjects</h2>
   <%= link_to("Add Subject", {action: 'new'}, class: "action new") %><br><br>
@@ -18,7 +14,7 @@
       <tr>
         <td><%= subject.position %></td>
         <td><%= subject.name %></td>
-        <td class="center"><%= subject.visible? ? 'Yes' : 'No' %></td>
+        <td class="center"><%= status_tag(subject.visible) %></td>
         <td class="center"><%= subject.pages.count %></td>
         <td class="actions">
           <%= link_to("Show", {action: 'show', id: subject.id}, class: 'action show') %>

@@ -1,7 +1,7 @@
 class SubjectsController < ApplicationController
   before_action :find_subject, only: [:show, :edit, :update, :delete, :destroy]
   before_action :get_all_subjects, only: [:index]
-  layout false
+  layout "admin"
 
   def index
   end
