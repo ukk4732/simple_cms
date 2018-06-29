@@ -4,4 +4,14 @@
 <a href="demo/hello">Hello Page 1</a><br />
 <%= link_to('Hello Page 2', {action: 'hello'}) %> <br />
 
-<%= link_to('Hello with params', {action: 'hello', page: 5, name: 'umesh', id: 20}) %>
+<%= link_to('Hello with params', {action: 'hello', page: 5, name: 'umesh', id: 20}) %><br />
+
+<%= link_to('Show Meggate Alert', '#', onclick: "show_message('this is raw message'); return: true;") %>
+
+<%#= javascript_tag("alert('Hello.........')") %>
+
+<script type="text/javascript">
+ 
+    show_message("Hello.......");
+
+</script>

@@ -1,11 +1,11 @@
 class DemoController < ApplicationController
   
-  layout false
+  layout 'admin'
 
   def index
     # render('hello')
   end
-
+  
   def hello
     # render('index')
     @my_array = [1,2,3,4,5,6]
