@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :get_all_pages, only: [:index]
+  before_action :get_all_pages, except: [:show, :delete, :destroy]
   before_action :find_page, only: [:show, :edit, :update, :delete, :destroy]
   layout "admin"
 
@@ -11,6 +11,7 @@ class PagesController < ApplicationController
 
   def new
     @page = Page.new
+    @pages_count = @pages.count + 1
   end
 
   def create
@@ -19,11 +20,13 @@ class PagesController < ApplicationController
       flash[:notice] = "Page created successfuly"
       redirect_to(action: 'index')
     else
+      @pages_count = @pages.count + 1
       render :new
     end
   end
 
   def edit
+    @pages_count = @pages.count
   end
 
   def update
@@ -31,6 +34,7 @@ class PagesController < ApplicationController
       flash[:notice] = "Page updated successfuly"
       redirect_to(action: 'index')
     else
+      @pages_count = @pages.count 
       render :edit
     end
   end
@@ -47,7 +51,7 @@ class PagesController < ApplicationController
   private
 
   def page_params
-    params.require(:page).permit(:name, :position, :visible, :permalink)
+    params.require(:page).permit(:name, :position, :visible, :permalink, :subject_id)
   end
 
   def get_all_pages

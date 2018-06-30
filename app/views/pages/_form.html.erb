@@ -1,11 +1,15 @@
 <table summary="Page form field">
   <tr>
-    <th>Name: </th>
+    <th><%= f.label(:subject_id, "Subject") %></th>
+    <td><%= f.select(:subject_id, Subject.all.map { |sub| [sub.name, sub.id] }) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:name) %></th>
     <td><%= f.text_field(:name) %></td>
   </tr>
   <tr>
-    <th>Position: </th>
-    <td><%= f.text_field(:position) %></td>
+    <th><%= f.label(:position) %></th>
+    <td><%= f.select(:position, 1..@pages_count) %></td>
   </tr>
   <tr>
   <tr>
@@ -13,6 +17,6 @@
     <td><%= f.text_field(:permalink) %></td>
   </tr>
     <th>Visible</th>
-    <td><%= f.text_field(:visible) %></td>
+    <td><%= f.check_box(:visible) %></td>
   </tr>
 </table>

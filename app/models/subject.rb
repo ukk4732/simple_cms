@@ -1,6 +1,8 @@
 class Subject < ActiveRecord::Base
   #ASSOCIATION
   has_many :pages
+  #VALIDATION
+  validates_presence_of :name
   #SCOPES
   scope :visible, lambda { where(visible: true) }
   scope :invisible, lambda { where(visible: false) }
